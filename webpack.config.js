@@ -3,7 +3,7 @@ const fs = require('fs')
 
 const defaultBabelConfig = JSON.parse(fs.readFileSync('.babelrc', {encoding: 'utf8'}))
 
-// webpack 2 should not resolve es2015 imports
+// webpack 2 resolves es2015 imports
 const presets = [
   ['es2015', {modules: false}]
 ].concat(defaultBabelConfig.presets.filter(v => v !== 'es2015'))
