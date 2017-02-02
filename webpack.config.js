@@ -23,6 +23,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: babelConfig
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },

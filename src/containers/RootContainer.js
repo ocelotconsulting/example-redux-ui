@@ -1,9 +1,9 @@
 import React, {PropTypes as T} from 'react'
 import {connect} from 'react-redux'
 
-export const Root = ({message}) => (
-  <h3>{message}</h3>
-)
+export const Root = ({message}) =>
+  <div className='message'>{message}</div>
+
 
 Root.displayName = 'Root'
 

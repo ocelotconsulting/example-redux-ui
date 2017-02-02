@@ -4,11 +4,10 @@ import {connect} from 'react-redux'
 import RootContainer from './RootContainer'
 import setMessageLater from '../actions/setMessageLater'
 
-export const App = ({onEnter}) => (
+export const App = ({onEnter}) =>
   <Router history={browserHistory}>
     <Route path='/' component={RootContainer} onEnter={onEnter}/>
   </Router>
-)
 
 App.displayName = 'App'
 
