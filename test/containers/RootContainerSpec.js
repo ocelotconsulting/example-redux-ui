@@ -13,8 +13,8 @@ describe('RootContainer', () => {
         component = shallow(<Root {...props}/>)
       })
 
-      it('renders message', () =>
-        component.find('h3').children().text().should.equal(props.message)
-      )
+      it('renders message', () => {
+        component.find('.message').children().text().should.equal(props.message)
+      })
     })
 })
