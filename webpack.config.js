@@ -1,12 +1,11 @@
-const webpack = require('webpack')
 const fs = require('fs')
 
 const defaultBabelConfig = JSON.parse(fs.readFileSync('.babelrc', {encoding: 'utf8'}))
 
 // webpack 2 resolves es2015 imports
 const presets = [
-  ['es2015', {modules: false}]
-].concat(defaultBabelConfig.presets.filter(v => v !== 'es2015'))
+  ['env', {modules: false}]
+].concat(defaultBabelConfig.presets.filter(v => v !== 'env'))
 
 const babelConfig = Object.assign({}, defaultBabelConfig, {babelrc: false, presets})
 
@@ -16,6 +15,7 @@ module.exports = {
     path: './public',
     filename: 'bundle.js'
   },
+  mode: process.env.WEBPACK_MODE || 'development',
   module: {
     rules: [
       {
@@ -35,13 +35,5 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({sourceMap: true})
-  ]
+  devtool: 'eval-source-map'
 }

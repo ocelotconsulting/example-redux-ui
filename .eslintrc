@@ -1,0 +1,35 @@
+{
+    "parser": "babel-eslint",
+    "extends": "standard",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "globals": {},
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/jsx-uses-react": ["error"],
+        "react/jsx-uses-vars": ["error"],
+        "react/jsx-filename-extension": [1, {
+            "extensions": [".js"]
+        }]
+    },
+    "overrides": {
+        "files": ["test/**/*.js"],
+        "globals": {
+            "describe": true,
+            "beforeEach": true,
+            "it": true,
+            "expect": true
+        }
+    }
+}

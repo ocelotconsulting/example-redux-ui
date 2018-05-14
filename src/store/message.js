@@ -1,8 +1,8 @@
 import {SET_MESSAGE} from '../actions/types'
 
-const initialState = {
+const initialState = Object.freeze({
   value: 'loading...'
-}
+})
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
