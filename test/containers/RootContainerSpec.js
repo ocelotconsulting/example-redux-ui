@@ -3,18 +3,18 @@ import {shallow} from 'enzyme'
 import {Root} from '../../src/containers/RootContainer'
 
 describe('RootContainer', () => {
-    describe('Root', () => {
-      let props, component
+  describe('Root', () => {
+    let props, component
 
-      beforeEach(() => {
-        props = {
-          message: 'test message'
-        }
-        component = shallow(<Root {...props}/>)
-      })
-
-      it('renders message', () => {
-        component.find('.message').children().text().should.equal(props.message)
-      })
+    beforeEach(() => {
+      props = {
+        message: 'test message'
+      }
+      component = shallow(<Root {...props}/>)
     })
+
+    it('renders message', () => {
+      expect(component.find('.message').children().text()).toBe(props.message)
+    })
+  })
 })
