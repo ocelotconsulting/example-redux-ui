@@ -1,4 +1,7 @@
 .message {
   font-size: 150%;
   color: #444;
+  &.success {
+    color: green;
+  }
 }
